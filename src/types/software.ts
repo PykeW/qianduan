@@ -1,16 +1,16 @@
-export type SoftwareCategory = 'development' | 'design' | 'productivity' | 'utilities'
-
-export type Software = {
-  id: string
-  name: string
-  description: string
-  category: SoftwareCategory
-  version: string
-  downloadCount: number
-  size: string
-  lastUpdated: string
-  icon: string
-  screenshots: string[]
+export interface Software {
+  id: string;
+  name: string;
+  description: string;
+  category: string;
+  versions: Version[];
 }
 
-export type SortOption = 'name' | 'downloadCount' | 'lastUpdated' 
+export interface Version {
+  id: string;
+  version: string;
+  releaseDate: string;
+  downloadUrl: string;
+}
+
+export type SoftwareCategory = string | undefined;
